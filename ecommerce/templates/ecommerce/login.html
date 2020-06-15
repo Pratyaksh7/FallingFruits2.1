@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/login.css' %}"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="login-container">
+          <div class="header">Login</div>
+
+          <div class="username-container">
+            <div class="username">
+              <input type="text" name="username" placeholder="Username" />
+            </div>
+          </div>
+
+          <div class="password-container">
+            <div class="password">
+              <input type="password" name="password" placeholder="Password" />
+            </div>
+          </div>
+
+          <div class="submit-container">
+            <div class="submit">
+              <input type="submit" name="submit" value="login" />
+            </div>
+          </div>
+        </div>
+      </form>
+      <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

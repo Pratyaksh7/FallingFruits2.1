@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-container {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  background-color: #d33b33;
+  background-image: linear-gradient(
+    to top right,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.header {
+  color: white;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.username-container,
+.password-container,
+.submit-container {
+  /* display: flex; */
+
+  align-items: column;
+  padding-top: 20px;
+}
+
+.username,
+.password,
+.header {
+  height: 60px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.username input,
+.password input {
+  height: 40px;
+  border-radius: 70px;
+  border: 1px solid black;
+  font-size: 22px;
+  background-color: white;
+  color: #808080;
+  text-align: center;
+}
+
+.username input:focus,
+.password input:focus {
+  outline: none;
+}
+
+.submit {
+  height: 60px;
+
+  border-radius: 20px;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit input {
+  height: 60px;
+  border-radius: 15px;
+  border: 1px solid black;
+  font-size: 22px;
+  background-image: linear-gradient(to bottom right, #fd1d1d, #e1306c);
+  color: white;
+
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+}
+.submit input:hover {
+  /* background-color: #d33b33; */
+  background-image: linear-gradient(to top left, #fd1d1d, #e1306c);
+  color: white;
+}

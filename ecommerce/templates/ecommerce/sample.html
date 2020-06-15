@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .mainpic {
+        width: 50%;
+        height: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+      .icon {
+        margin-top: -20px;
+      }
+      .boundary {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 2%;
+      }
+      hr {
+        width: 50%;
+      }
+      .zoom {
+        padding: 15px;
+        transition: transform 0.2s;
+        margin: 0 auto;
+      }
+      .zoom:hover {
+        -ms-transform: scale(
+          1.5
+        ); /* IE 9 
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5);
+      }
+      .carousel-inner img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container p-5">
+      <div class="row">
+        {% for location in locations %}
+        <div class="col-md-4">
+          <div class="container boundary" align="center">
+            <h1><strong>{{location.state}}</strong></h1>
+            <hr />
+            <div id="demo" class="carousel slide" data-ride="carousel">
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+              <div class="carousel-inner">
+                <h3>{{location.city}}</h3>
+                <div class="carousel-item active" data-interval="2000">
+                  <img src="pic.png" alt="Pic1" />
+                </div>
+
+                <div class="carousel-item" data-interval="2000">
+                  <img src="pic.png" alt="Pic2" />
+                </div>
+
+                <div class="carousel-item" data-interval="2000">
+                  <img src="pic.png" alt="Pic3" width="1100" height="500" />
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+
+        {% endfor %}
+        <br /><br />
+      </div>
+      <br /><br />
+    </div>
+  </body>
+</html>
